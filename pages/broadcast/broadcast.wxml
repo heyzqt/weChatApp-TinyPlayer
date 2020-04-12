@@ -1,0 +1,6 @@
+<!--pages/broadcast.wxml-->
+<view class="broadcast-box clearfix">
+  <view class="card-box" wx:for="{{broadcastList}}">
+    <broadItem item="{{item}}"></broadItem>
+  </view>
+</view>

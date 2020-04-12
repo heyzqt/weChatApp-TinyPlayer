@@ -1,0 +1,4 @@
+<!--components/broadItem/broadItem.wxml-->
+<view class="broad-item-box" style="background-image: url('{{item.thumb}}');">
+  <text class="channel-name">{{item.name}}</text>
+</view>

@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="rank-box">
+	<view wx:for="{{audioList}}" wx:key="type">
+		<rankItem item="{{item}}"></rankItem>
+	</view>
+</view>

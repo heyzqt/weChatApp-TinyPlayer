@@ -1,0 +1,18 @@
+<!--components/rankItem.wxml-->
+<wxs src="../../utils/hexColor.wxs" module="hexColor" />
+<view class="rank-item">
+	<view class="content">
+		<view class="name">{{item.name}}</view>
+		<view class="top123">
+			<view wx:for="{{item.content}}" wx:for-item="citem" wx:for-index="cindex" wx:key="cindex">
+				<view class="top-item" wx:if="{{cindex<3}}">
+					<text class="title">{{cindex + 1}}、{{citem.title}} - </text>
+					<text class="author">{{citem.author}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="profile" style="background-color: {{hexColor(item.bg_color)}};">
+		<image class="banner" src="{{item.bg_pic}}" mode="aspectFit"></image>
+	</view>
+</view>

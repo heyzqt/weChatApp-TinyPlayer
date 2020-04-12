@@ -1,16 +1,33 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+  "pages": [
+    "pages/rank/rank",
+    "pages/broadcast/broadcast",
+    "pages/rankDetail/rankDetail"
   ],
   "requiredBackgroundModes": [
     "audio"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "backgroundColor": "#ffffff",
+    "position": "top",
+    "list": [
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "音乐排行榜"
+      },
+      {
+        "pagePath": "pages/broadcast/broadcast",
+        "text": "音乐电台"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

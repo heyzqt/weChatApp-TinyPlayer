@@ -1,0 +1,21 @@
+/* pages/broadcast.wxss */
+Page {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.broadcast-box {
+  width: 700rpx;
+  background-color: #fafafa;
+  margin: 0 auto;
+  padding-bottom: 110rpx;
+}
+
+.card-box {
+  float: left;
+  width: 350rpx;
+  height: 350rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
