@@ -13,10 +13,18 @@ const hideLoading = (params) => wx.hideLoading(params);
 //获取背景音乐播放BackgroundAudioManager实例
 const createBackgroundAudioManager = () => wx.getBackgroundAudioManager();
 
+//跳转到指定页面
+const navigateTo = (params) => wx.navigateTo(params);
+
+//设置当前页面标题
+const setNavigationBarTitle = (params) => wx.setNavigationBarTitle(params);
+
 module.exports = {
   toast,
   request,
   showLoading,
   hideLoading,
-  createBackgroundAudioManager
+  createBackgroundAudioManager,
+  navigateTo,
+  setNavigationBarTitle
 }

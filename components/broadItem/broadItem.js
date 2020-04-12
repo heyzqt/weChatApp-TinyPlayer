@@ -1,4 +1,8 @@
 // components/broadItem/broadItem.js
+import {
+  navigateTo
+} from '../../common/wx'
+
 Component({
   /**
    * 组件的属性列表
@@ -21,6 +25,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleClick: function (e) {
+      const { channelname, name } = e.currentTarget.dataset;
+      navigateTo({
+        url: `/pages/broadcastDetail/broadcastDetail?channelname=${channelname}&name=${name}`
+      })
+    }
   }
 })

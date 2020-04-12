@@ -1,0 +1,10 @@
+<!--components/listItem/listItem.wxml-->
+<view class="list-item-box">
+	<view class="profile">
+		<image class="cover" src="{{pic}}"></image>
+	</view>
+	<view class="content">
+		<view class="title">{{title}}</view>
+		<view class="name">{{name}}</view>
+	</view>
+</view>

@@ -1,5 +1,6 @@
 //index.js
 import {
+  setNavigationBarTitle,
   showLoading,
   hideLoading
 } from '../../common/wx'

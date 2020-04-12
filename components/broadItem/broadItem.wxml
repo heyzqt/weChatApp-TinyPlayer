@@ -1,4 +1,5 @@
 <!--components/broadItem/broadItem.wxml-->
-<view class="broad-item-box" style="background-image: url('{{item.thumb}}');">
+<view class="broad-item-box" style="background-image: url('{{item.thumb}}');" bindtap="handleClick"
+data-channelname="{{item.ch_name}}" data-name="{{item.name}}">
   <text class="channel-name">{{item.name}}</text>
 </view>

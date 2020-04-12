@@ -1,0 +1,4 @@
+<!--pages/broadcastDetail/broadcastDetail.wxml-->
+<view class="broadcast-wrap" wx:for="{{dataSource}}">
+	<listItem id="{{item.songid}}" pic="{{item.thumb}}" title="{{item.title}}" name="{{item.artist}}"></listItem>
+</view>

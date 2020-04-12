@@ -1,1 +1,23 @@
 /* pages/rankDetail/rankDetail.wxss */
+
+.rank-detail-box {
+  padding-bottom: 110rpx;
+}
+
+.rank-header {
+  width: 100%;
+  height: 500rpx;
+  line-height: 500rpx;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+.rank-detail-wrap {
+  padding-top: 500rpx;
+}
+
+.rank-list {
+  background-color: #fff;
+}

@@ -2,7 +2,8 @@
   "pages": [
     "pages/rank/rank",
     "pages/broadcast/broadcast",
-    "pages/rankDetail/rankDetail"
+    "pages/rankDetail/rankDetail",
+    "pages/broadcastDetail/broadcastDetail"
   ],
   "requiredBackgroundModes": [
     "audio"

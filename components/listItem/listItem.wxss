@@ -1,0 +1,34 @@
+/* components/listItem/listItem.wxss */
+
+.list-item-box {
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  width: 150rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+}
+
+.cover {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.title {
+  font-size: 30rpx;
+}
+
+.name {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+}

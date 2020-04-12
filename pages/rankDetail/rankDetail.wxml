@@ -1,2 +1,12 @@
 <!--pages/rankDetail/rankDetail.wxml-->
-<text>pages/rankDetail/rankDetail.wxml</text>
+<wxs src="../../utils/hexColor.wxs" module="hexColor" />
+<view class="rank-detail-box">
+  <view class="rank-header" style="background-color: {{hexColor(bgcolor)}};">
+    <image src="{{bg}}" mode="aspectFit"></image>
+  </view>
+  <view class="rank-detail-wrap">
+    <view class="rank-list" wx:for="{{audioList}}">
+      <listItem id="{{item.song_id}}" pic="{{item.pic_big}}" title="{{item.album_title}}" name="{{item.artist_name}}"></listItem>
+    </view>
+  </view>
+</view>

@@ -1,4 +1,6 @@
 // components/rankItem.js
+import {navigateTo} from '../../common/wx'
+
 Component({
   /**
    * 组件的属性列表
@@ -21,6 +23,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleClick: function(e) {
+      console.log(e)
+      const {type, name, bg, bgcolor} = e.currentTarget.dataset;
+      navigateTo({url: `/pages/rankDetail/rankDetail?type=${type}&name=${name}&bg=${bg}&bgcolor=${bgcolor}`})
+    }
   }
 })
