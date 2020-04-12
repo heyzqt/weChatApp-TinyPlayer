@@ -10,9 +10,13 @@ const showLoading = (params) => wx.showLoading(params);
 //隐藏loading的方法
 const hideLoading = (params) => wx.hideLoading(params);
 
+//获取背景音乐播放BackgroundAudioManager实例
+const createBackgroundAudioManager = () => wx.getBackgroundAudioManager();
+
 module.exports = {
   toast,
   request,
   showLoading,
-  hideLoading
+  hideLoading,
+  createBackgroundAudioManager
 }

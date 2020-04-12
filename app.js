@@ -1,6 +1,12 @@
 //app.js
+import { createBackgroundAudioManager } from './common/wx.js'
+import AudioListManager from './audio/AudioListManager.js'
+import AudioBgManagerInstance from './audio/AudioBackgroundManager.js'
+
 App({
   onLaunch: function () {
+    console.log('app onLaunch')
+    
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -34,6 +40,15 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    globalAudioManager: createBackgroundAudioManager(),
+    globalBgAudioManager: AudioBgManagerInstance,
+    globalAudioListManager: AudioListManager,
+    isPlay: false, //背景音乐播放状态
+    currentTime: 0,
+    duration: 0,
+    playProgress: 0,
+    slidermin: 0,
+    slidermax: 0
   }
 })

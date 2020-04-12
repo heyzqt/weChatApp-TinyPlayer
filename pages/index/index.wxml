@@ -1,13 +1,26 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+	<view class="userinfo">
+		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+		<block wx:else>
+			<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</block>
+	</view>
+	<view wx:for="{{audioList.list}}" wx:key="id">
+		<view>
+      <view bindtap="handlePlayAudio" data-id="{{item.id}}">music is: {{item.musicName}}</view>
+		</view>
+	</view>
+	<view style="width: 100%;">
+		<view>slidermin = {{slidermin}}</view>
+		<view>playProgress = {{playProgress}}</view>
+		<view>slidermax = {{slidermax}}</view>
+		<slider min="{{slidermin}}" max="{{slidermax}}" value="{{playProgress}}" bindchange="handleSliderMoveChange" bindtouchstart="handleSliderMoveStart" bindtouchend="handleSliderMoveEnd"></slider>
+		<view style="display:flex; justify-content: space-between;"><text>currentTime: {{currentTime}}</text><text>duration: {{duration}}</text></view>
+	</view>
+	{{isPlay}}
+	<view bindtap="handlePlayAudio">{{isPlay ? 'pause':'play'}}</view>
+	<view bindtap="handlePrevAudio">prev</view>
+	<view bindtap="handleNextAudio">next</view>
 </view>
