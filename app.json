@@ -3,7 +3,8 @@
     "pages/rank/rank",
     "pages/broadcast/broadcast",
     "pages/rankDetail/rankDetail",
-    "pages/broadcastDetail/broadcastDetail"
+    "pages/broadcastDetail/broadcastDetail",
+    "pages/playerview/playerview"
   ],
   "requiredBackgroundModes": [
     "audio"

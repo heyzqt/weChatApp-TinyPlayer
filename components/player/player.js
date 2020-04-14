@@ -2,26 +2,11 @@
 import {
   DEFAULT_MUSIC
 } from '../../config/index'
+import pubsub from '../../utils/pubsub'
 var app = getApp()
 
 Component({
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-    propPlayListId: {
-      type: String,
-      value: ''
-    },
-    propAudioList: {
-      type: Array,
-      value: []
-    }
-  },
-
-  /**
-   * 组件的初始数据
-   */
+  properties: {},
   data: {
     audioPlayListId: DEFAULT_MUSIC.id,
     audioList: [{
@@ -35,61 +20,70 @@ Component({
     audio: {},
     isPlay: false
   },
-
   pageLifetimes: {
+    //组件显示
     show: function () {
-      console.log('playListId = ', this.data.propPlayListId)
-      console.log('audio list = ', this.data.propAudioList)
-
       this.initData()
+
+      //注册updatePlayer订阅事件
+      pubsub.on('updatePlayer', (playListId, audio, audioList) => {
+        console.log('updatePlayer playListId= ', playListId)
+        console.log('updatePlayer audio=', audio)
+        console.log('updatePlayer audioList=', audioList)
+      })
 
       app.globalData.globalBgAudioManager.setPlayCallback((playstate) => {
         console.log('setPlayCallback playstate = ', playstate, ', isPlay=', app.globalData.isPlay)
         this.setData({
           isPlay: app.globalData.isPlay
         })
+        //如果不是最后一首歌，自动播放下一曲
+        //如果是最后一首歌，停止歌曲并初始化歌曲
         if (playstate === global.AUDIO_STATE_END) {
-          if ((app.globalData.globalAudioListManager.currentIndex + 1) === this.data.audioList.list.length) {
+          if ((app.globalData.globalAudioListManager.currentIndex + 1) === app.globalData.globalAudioListManager.audioList.length) {
             app.globalData.currentTime = 0;
             app.globalData.playProgress = 0;
-            this.setData({
-              currentTime: app.globalData.currentTime,
-              playProgress: app.globalData.playProgress
-            })
           }
-
-          this.handleNextAudio(false)
+          this.handleNextAudio()
         }
       })
     }
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
     initData() {
-      this.setData({
-        audio: this.data.audioList[this.data.curAudioIndex]
-      })
+      //检查有无背景音乐在播放
+      if (app.globalData.globalAudioListManager.isAudioListEmpty()) {
+        //若无，则设置成默认音乐
+        this.setData({
+          audio: this.data.audioList[this.data.curAudioIndex]
+        })
+      } else {
+        //若有，则更新播放栏为当前背景音乐
+        this.setData({
+          audio: app.globalData.globalAudioListManager.getCurrentAudio(),
+          audioPlayListId: app.globalData.globalAudioListManager.playListId,
+          audioList: app.globalData.globalAudioListManager,
+          isPlay: app.globalData.isPlay
+        })
+      }
+      console.log('player initdata audio = ', this.data.audio)
+      console.log('player initdata audioPlayListId = ', this.data.audioPlayListId)
+      console.log('player initdata audio list = ', this.data.audioList)
     },
-    handlePlay() {
+    handlePlayClick() {
       this.playTargetAudio(this.data.audio.id)
     },
-    // * 点击／自动播放 目标音频
-    // * @param {*Number} targetAudioId
-    // * - 检查是否点击到同一个音频
-    // * - 检查是否完全播放完毕
-    // * - 若未播放完毕，或者点击的不是同一个音频，先暂停当前音频
-    // * - 执行音频播放操作
     playTargetAudio(id) {
       if (app.globalData.globalAudioListManager.isSameAudio(id)) {
         //同一个音频
         if (!app.globalData.currentTime) {
-          //currentTimeW为0时，可能是当前音频播放完毕，stop后的一个状态，此时使用play是不能重新播放的
+          //currentTimeW为0时，可能是当前音频播放完毕，stop后的状态，此时使用play是不能重新播放的
           //必须重新设置audio的src才能重新播放
           if (app.globalData.globalAudioListManager.changeCurrentAudioById(id)) {
             //更换并播放背景音乐
+            this.setData({
+              audio: app.globalData.globalAudioListManager.getCurrentAudio()
+            })
             app.globalData.globalBgAudioManager.changeAudio(app.globalData.globalAudioListManager.getCurrentAudio());
           }
         } else {
@@ -108,8 +102,17 @@ Component({
         }
 
         if (app.globalData.globalAudioListManager.changeCurrentAudioById(id)) {
+          this.setData({
+            audio: app.globalData.globalAudioListManager.getCurrentAudio()
+          })
           app.globalData.globalBgAudioManager.changeAudio(app.globalData.globalAudioListManager.getCurrentAudio());
         }
+      }
+    },
+    handleNextClick() {
+      if (app.globalData.globalAudioListManager.changeCurrentAudioByIndex(app.globalData.globalAudioListManager.data.currentIndex + 1)) {
+        this.audio = app.globalData.globalAudioListManager.getCurrentAudio()
+        app.globalData.globalBgAudioManager.changeAudio(app.globalData.globalAudioListManager.getCurrentAudio())
       }
     }
   }

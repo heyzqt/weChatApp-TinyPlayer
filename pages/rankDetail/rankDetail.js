@@ -5,10 +5,12 @@ import {
 import {
   fetchMusicRankingsDetail
 } from '../../fetch/request'
+import pubsub from '../../utils/pubsub'
 
 Page({
   data: {
-    audioList: []
+    audioList: [],
+    playListId: ''
   },
   onLoad: function (options) {
     console.log(options)
@@ -25,8 +27,9 @@ Page({
     this.setData({
       bg: bg,
       bgcolor: bgcolor,
-      playListId: 'type='+type
+      playListId: 'type_'+type
     })
+    console.log('onLaunch playListId=', this.data.playListId)
 
     fetchMusicRankingsDetail({
       type: type
@@ -36,4 +39,22 @@ Page({
       })
     })
   },
+  onReady: function() {
+    //注册updateAudioList订阅事件
+    pubsub.on('updateAudioList', (audio) => {
+      console.log('updateAudioList audio= ', audio);
+      pubsub.emit('updatePlayer', {playListId, audio, audioList})//通知player更新数据和视图
+    })
+  },
+
+  //更新UI
+  updateControlsInAudio: function() {
+    this.setData({
+
+    })
+  },
+
+  onUnload: function() {
+    //todo 解除订阅
+  }
 })

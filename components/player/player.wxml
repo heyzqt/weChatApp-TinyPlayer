@@ -8,6 +8,6 @@
     </view>
   </view>
   <view class="player-right">
-    <image class="play-img" src="{{isPlay?'/imgs/pause.svg':'/imgs/start.svg'}}" bindtap="handlePlay"></image>
+    <image class="play-img" src="{{isPlay?'/imgs/pause.svg':'/imgs/start.svg'}}" bindtap="handlePlayClick"></image>
   </view>
 </view>

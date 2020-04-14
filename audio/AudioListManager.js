@@ -17,7 +17,11 @@ class AudioListManager {
       return new AudioListManager();
     }
     return this.instance;
-  }
+	}
+	
+	isAudioListEmpty = () => {
+		return this.audioInfo.id === 'heyzqt' || this.audioInfo.id === ''
+	}
 
   	//获取当前音频
 	getCurrentAudio = () => {
