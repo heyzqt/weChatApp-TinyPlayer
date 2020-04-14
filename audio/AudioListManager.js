@@ -72,7 +72,6 @@ class AudioListManager {
 			if (id === item.id) {
 				this.audioInfo = item;
         this.currentIndex = index;
-        console.log('this.currentIndex=', this.currentIndex)
 				break
 			}
 			index++;

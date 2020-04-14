@@ -1,5 +1,5 @@
 <!--components/listItem/listItem.wxml-->
-<view class="list-item-box">
+<view class="list-item-box" bindtap="handlePlayClick">
 	<view class="profile">
 		<image class="cover" src="{{pic}}"></image>
 	</view>

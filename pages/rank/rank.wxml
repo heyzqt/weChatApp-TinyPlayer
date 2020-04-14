@@ -3,4 +3,5 @@
 	<view wx:for="{{audioList}}" wx:key="type">
 		<rankItem item="{{item}}"></rankItem>
 	</view>
+	<player></player>
 </view>

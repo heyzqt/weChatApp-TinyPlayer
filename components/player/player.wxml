@@ -1,0 +1,13 @@
+<!--components/player/player.wxml-->
+<view class="player-wrap">
+  <view class="player-left">
+    <image class="music-pic" src="{{audio.musicPic}}"></image>
+    <view class="player-info">
+      <view class="music-name">{{audio.musicName}}</view>
+      <view class="singer-name">{{audio.artistName}}</view>
+    </view>
+  </view>
+  <view class="player-right">
+    <image class="play-img" src="{{isPlay?'/imgs/pause.svg':'/imgs/start.svg'}}" bindtap="handlePlay"></image>
+  </view>
+</view>

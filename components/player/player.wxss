@@ -1,0 +1,46 @@
+/* components/player/player.wxss */
+
+.player-wrap {
+  width: 100%;
+  height: 80rpx;
+  background-color: rgba(255, 255, 255, .9);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-left {
+  display: flex;
+}
+
+.music-pic {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  margin-left: 30rpx;
+}
+
+.player-info {
+  margin-left: 20rpx;
+}
+
+.music-name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.singer-name {
+  font-size: 25rpx;
+  color: #6a6a6a;
+  font-weight: bold;
+}
+
+.play-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+}

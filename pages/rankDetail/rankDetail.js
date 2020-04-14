@@ -24,7 +24,8 @@ Page({
 
     this.setData({
       bg: bg,
-      bgcolor: bgcolor
+      bgcolor: bgcolor,
+      playListId: 'type='+type
     })
 
     fetchMusicRankingsDetail({

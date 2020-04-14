@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "listItem": "../../components/listItem/listItem"
+    "listItem": "../../components/listItem/listItem",
+    "player": "../../components/player/player"
   }
 }

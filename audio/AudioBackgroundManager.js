@@ -53,13 +53,17 @@ class AudioBackgroundManager {
         console.log('audio play')
         hideLoading();
         this.app.globalData.isPlay = true
-        this.callback(global.AUDIO_STATE_PLAY)
+        if (this.callback) {
+          this.callback(global.AUDIO_STATE_PLAY)
+        }
       })
 
       this.app.globalData.globalAudioManager.onPause(() => {
         console.log('audio pause')
         this.app.globalData.isPlay = false;
-        this.callback(global.AUDIO_STATE_PAUSE)
+        if (this.callback) {
+          this.callback(global.AUDIO_STATE_PAUSE)
+        }
       })
 
       this.app.globalData.globalAudioManager.onTimeUpdate(() => {
@@ -73,7 +77,9 @@ class AudioBackgroundManager {
         }
         this.app.globalData.currentTime = this.app.globalData.globalAudioManager.currentTime;
         this.app.globalData.duration = this.app.globalData.globalAudioManager.duration;
-        this.updateTimeCallback();
+        if (this.updateTimeCallback) {
+          this.updateTimeCallback();
+        }
       })
       this.app.globalData.globalAudioManager.onSeeked(() => {
         console.log('audio onSeeked')
@@ -83,13 +89,17 @@ class AudioBackgroundManager {
         console.log('audio ended')
         this.app.globalData.globalAudioManager.stop();
         this.app.globalData.isPlay = false;
-        this.callback(global.AUDIO_STATE_END);
+        if (this.callback) {
+          this.callback(global.AUDIO_STATE_END);
+        }
       })
 
       this.app.globalData.globalAudioManager.onWaiting(() => {
         console.log('onWaiting')
         showLoading();
-        this.callback(global.AUDIO_STATE_WAITING);
+        if (this.callback) {
+          this.callback(global.AUDIO_STATE_WAITING);
+        }
       })
 
       this.app.globalData.globalAudioManager.onError((res) => {

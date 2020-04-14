@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "音乐电台",
   "usingComponents": {
-    "broadItem": "../../components/broadItem/broadItem"
+    "broadItem": "../../components/broadItem/broadItem",
+    "player": "../../components/player/player"
   }
 }
