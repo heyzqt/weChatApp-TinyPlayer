@@ -9,6 +9,5 @@
       <listItem id="{{item.song_id}}" pic="{{item.pic_big}}" title="{{item.album_title}}" name="{{item.artist_name}}"></listItem>
     </view>
   </view>
-  <!-- <player playlistid="{{playListId}}" audiolist="{{audioList}}"></player> -->
   <player />
 </view>

@@ -27,7 +27,7 @@ Page({
     this.setData({
       bg: bg,
       bgcolor: bgcolor,
-      playListId: 'type_'+type
+      playListId: 'type_' + type
     })
     console.log('onLaunch playListId=', this.data.playListId)
 
@@ -39,22 +39,26 @@ Page({
       })
     })
   },
-  onReady: function() {
+  onReady: function () {
     //注册updateAudioList订阅事件
     pubsub.on('updateAudioList', (audio) => {
       console.log('updateAudioList audio= ', audio);
-      pubsub.emit('updatePlayer', {playListId, audio, audioList})//通知player更新数据和视图
+      pubsub.emit('updatePlayer', {
+        playListId: this.data.playListId,
+        audio,
+        audioList: this.data.audioList
+      }) //通知player更新数据和视图
     })
   },
 
   //更新UI
-  updateControlsInAudio: function() {
+  updateControlsInAudio: function () {
     this.setData({
 
     })
   },
 
-  onUnload: function() {
+  onUnload: function () {
     //todo 解除订阅
   }
 })
