@@ -1,6 +1,6 @@
 //歌曲默认信息配置
 const DEFAULT_MUSIC = {
-  id: 'default_music',
+  song_id: 'default_music',
   musicName: '当冬夜渐暖',
   artistName: '孙燕姿',
   musicPic: 'https://img4.cache.netease.com/ent/2011/3/15/20110315074632a55d0.jpg',

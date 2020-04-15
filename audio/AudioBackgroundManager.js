@@ -7,7 +7,6 @@ var global = require('../utils/global')
 class AudioBackgroundManager {
   constructor(props) {
     this.instance = undefined;
-    this.isMovingSlider = false; //用户是否正在移动Slider
     this.callback = null; //音乐播放的回调
     this.updateTimeCallback = null; //更新播放时间的回调
   }
@@ -25,14 +24,6 @@ class AudioBackgroundManager {
 
   setUpdateTimeCallback = (callback) => {
     this.updateTimeCallback = callback;
-  }
-
-  setIsMovingSlider = (moving) => {
-    this.isMovingSlider = moving
-  }
-
-  seekAudio = (position) => {
-    this.app.globalData.globalAudioManager.seek(position)
   }
 
   changeAudio = (audio) => {
@@ -89,6 +80,7 @@ class AudioBackgroundManager {
         console.log('audio ended')
         this.app.globalData.globalAudioManager.stop();
         this.app.globalData.isPlay = false;
+        this.app.globalData.currentTime = 0; //歌曲播放结束，停止歌曲并初始化歌曲
         if (this.callback) {
           this.callback(global.AUDIO_STATE_END);
         }

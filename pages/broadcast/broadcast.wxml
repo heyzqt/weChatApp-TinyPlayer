@@ -3,4 +3,5 @@
   <view class="card-box" wx:for="{{broadcastList}}">
     <broadItem item="{{item}}"></broadItem>
   </view>
+  <player/>
 </view>

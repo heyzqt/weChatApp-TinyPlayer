@@ -48,12 +48,14 @@ Component({
       }).then((res) => {
         console.log('res=', res)
         const {
+          songId: song_id = DEFAULT_MUSIC.song_id,
           songName: musicName = DEFAULT_MUSIC.musicName,
           songLink: musicUrl = DEFAULT_MUSIC.musicUrl,
           songPicBig: musicPic = DEFAULT_MUSIC.musicPic,
           artistName: artistName = DEFAULT_MUSIC.artistName
         } = res.data.result.songList[0]
-        pubsub.emit('updateAudioList', {
+        pubsub.emit('updateAudio', {
+          song_id,
           musicName,
           musicUrl,
           musicPic,
