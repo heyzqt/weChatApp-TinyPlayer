@@ -15,6 +15,11 @@ class AudioListManager {
 		return this.instance;
 	}
 
+	//检查是否是同一首歌
+	isSameAudio = (id) => {
+		return id == this.audio.song_id
+	}
+
 	//获取当前音频
 	getCurrentAudio = () => {
 		return this.audio;
