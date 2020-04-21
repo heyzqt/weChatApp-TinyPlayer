@@ -1,0 +1,18 @@
+{
+						"id": "songlist1_0",
+						"title": '当冬夜渐暖',
+						"image_url": 'https://cdnizy.knowgroup.cn/upload/images/202003/hQBFzvx1583809353Hs8Hxn327298.jpg?x-oss-process=style/square_center',
+						"audio_url": 'http://music.163.com/song/media/outer/url?id=286959.mp3',
+					},
+					{
+						"id": "songlist1_1",
+						"title": '致爱丽丝',
+						"image_url": 'https://cdnizy.knowgroup.cn/upload/images/202003/hQBFzvx1583809353Hs8Hxn327298.jpg?x-oss-process=style/square_center',
+						"audio_url": 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/audio/music.mp3'
+					},
+					{
+						"id": "songlist1_2",
+						"title": "分分钟需要你",
+						"image_url": "https://cdnizy.knowgroup.cn/upload/images/202003/hQBFzvx1583809353Hs8Hxn327298.jpg?x-oss-process=style/square_center",
+						"audio_url": 'http://m10.music.126.net/20200415111902/21af9a5d95aa19e2c0efd4e39f441ed3/ymusic/5509/515d/550f/bc16780b07f7380c82ebbe4a6dc108bc.mp3'
+					}

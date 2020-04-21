@@ -1,0 +1,32 @@
+{
+	"code": 200,
+	"message": "成功!",
+	"result": {
+		"xcode": "3e0471d6179a09d23a6d42a7e3c36253",
+		"songList": [{
+			"songName": "桥边姑娘",
+			"albumName": "桥边姑娘",
+			"linkCode": 22000,
+			"format": "mp3",
+			"albumId": 672865436,
+			"artistId": "340615848",
+			"source": "web",
+			"songPicBig": "http://qukufile2.qianqian.com/data2/pic/b733a1a9fc0f63c7015be29b7b840b66/672866107/672866107.jpg@s_2,w_150,h_150",
+			"version": "",
+			"queryId": "672865438",
+			"songLink": "http://audio04.dmhmusic.com/71_53_T10052953671_128_4_1_0_sdk-cpm/cn/0209/M00/E1/B8/ChR47F33J_yAHE_JACrgf2qqnyQ634.mp3?xcode=8d176936e1e3e78962af9cd300bbb65b5ded765",
+			"size": 2809983,
+			"rate": 128,
+			"lrcLink": "http://qukufile2.qianqian.com/data2/lrc/4589294157b56806f6ff597660c84329/672866365/672866365.txt",
+			"copyType": 0,
+			"artistName": "舞蹈女神诺涵",
+			"time": 175,
+			"relateStatus": "0",
+			"songPicSmall": "http://qukufile2.qianqian.com/data2/pic/b733a1a9fc0f63c7015be29b7b840b66/672866107/672866107.jpg@s_2,w_90,h_90",
+			"songId": 672865438,
+			"songPicRadio": "http://qukufile2.qianqian.com/data2/pic/b733a1a9fc0f63c7015be29b7b840b66/672866107/672866107.jpg@s_2,w_300,h_300",
+			"showLink": "http://audio04.dmhmusic.com/71_53_T10052953671_128_4_1_0_sdk-cpm/cn/0209/M00/E1/B8/ChR47F33J_yAHE_JACrgf2qqnyQ634.mp3?xcode=8d176936e1e3e78962af9cd300bbb65b5ded765",
+			"resourceType": "0"
+		}]
+	}
+}

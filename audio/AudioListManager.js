@@ -10,7 +10,7 @@ class AudioListManager {
 
 	static getInstance() {
 		if (typeof (this.instance) === 'undefined') {
-			return new AudioListManager();
+			this.instance = new AudioListManager();
 		}
 		return this.instance;
 	}
